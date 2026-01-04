@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Local Gibson font family */
+@font-face {
+  font-family: "Gibson";
+  src: url("/fonts/gibson/fonnts.com-Gibson_Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gibson";
+  src: url("/fonts/gibson/fonnts.com-Gibson_Thin_Italic.otf") format("opentype");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gibson";
+  src: url("/fonts/gibson/fonnts.com-Gibson_Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gibson";
+  src: url("/fonts/gibson/fonnts.com-Gibson_Light_Italic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gibson";
+  src: url("/fonts/gibson/fonnts.com-Gibson_Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gibson";
+  src: url("/fonts/gibson/fonnts.com-Gibson_Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gibson";
+  src: url("/fonts/gibson/fonnts.com-Gibson_Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gibson";
+  src: url("/fonts/gibson/fonnts.com-Gibson_Medium_Italic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gibson";
+  src: url("/fonts/gibson/fonnts.com-Gibson_SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gibson";
+  src: url("/fonts/gibson/fonnts.com-Gibson_SemiBold_Italic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gibson";
+  src: url("/fonts/gibson/fonnts.com-Gibson_Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gibson";
+  src: url("/fonts/gibson/fonnts.com-Gibson_Bold_Italic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gibson";
+  src: url("/fonts/gibson/fonnts.com-Gibson_Heavy.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gibson";
+  src: url("/fonts/gibson/fonnts.com-Gibson_Heavy_Italic.otf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    /* Figma Design Tokens - MEM Website */
+    --background: 0 0% 98%; /* #fafafa */
+    --foreground: 42 21% 24%; /* #504736 */
+    
+    --card: 0 0% 97%; /* #f8f8f8 */
+    --card-foreground: 42 21% 24%; /* #504736 */
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 42 21% 24%;
+    
+    --primary: 38 17% 57%; /* #a59985 - footer brown */
+    --primary-foreground: 0 0% 98%; /* white */
+    
+    --secondary: 0 0% 93%; /* #eee */
+    --secondary-foreground: 42 21% 24%;
+    
+    --muted: 0 0% 93%;
+    --muted-foreground: 0 0% 58%; /* #959595 */
+    
+    --accent: 36 18% 57%; /* #a8987d - what we do section */
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 0 0% 93%;
+    --input: 0 0% 93%;
+    --ring: 42 21% 24%;
+    --radius: 0.75rem; /* 12px */
+
+    /* MEM Brand colors from Figma */
+    --brand-primary: 36 18% 57%; /* #a8987d */
+    --brand-secondary: 38 17% 57%; /* #a59985 */
+    --brand-brown: 40 15% 38%; /* #776c58 */
+    --brand-brown-light: 42 15% 61%; /* #aba190 */
+    --brand-brown-lighter: 38 17% 68%; /* #c1b5a2 */
+    --brand-text-dark: 42 21% 24%; /* #504736 */
+    --brand-text-medium: 102 13% 29%; /* #485240 */
+    --brand-text-light: 90 5% 24%; /* #3a3e38 */
+    --brand-cream: 41 73% 96%; /* #fef7ec */
+  }
+
+  .dark {
+    /* Keeping light theme for now - can be customized later */
+    --background: 0 0% 98%;
+    --foreground: 42 21% 24%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[#fafafa] text-[#504736];
+    font-family: "Gibson", "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Add Google Fonts - Using Inter as additional fallback and Sora for accents */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400&family=Sora:wght@400;600;700&display=swap');
+
+/* Note: Gibson font is not available on Google Fonts - using Inter as substitute */
+/* Sora is available and loaded above */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
